@@ -40,48 +40,46 @@ body {
 }
 
 .animate-slideUp {
-    animation: slideUp 0.3s ease-out forwards;
+    animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 /* =========================================
    3. PROFESSIONAL DARK MODE OVERRIDES
    ========================================= */
 /* Ensure smooth transitions for color variables */
-.bg-gray-50, .dark\:bg-neutral-950 {
+.bg-surface, .dark\:bg-\[\#121212\] {
     transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 /* Consistent Input Styling in Dark Mode */
 .dark input[type="text"], 
+.dark input[type="url"],
 .dark input[type="email"], 
 .dark input[type="password"] {
-    background-color: #262626; /* neutral-800 */
-    color: #f5f5f5;
-    border-color: #404040; /* neutral-700 */
+    background-color: #1e1e1e !important;
+    color: #f5f5f5 !important;
+    border-color: #333333 !important;
 }
 
 /* Fix for Material Icons in Dark Mode */
 .dark .material-symbols-outlined {
-    color: #e5e5e5;
+    color: inherit;
 }
 
 /* =========================================
    4. COMPONENT UTILITIES
    ========================================= */
 
-/* Glassmorphism Effect */
 .glass-effect {
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
 }
 
-/* Button Active States */
 .active-scale:active {
     transform: scale(0.95);
     transition: transform 0.1s ease;
 }
 
-/* Custom Scrollbar for Notifications/Feed */
 .custom-scrollbar::-webkit-scrollbar {
     width: 6px;
 }
@@ -94,13 +92,4 @@ body {
 }
 .dark .custom-scrollbar::-webkit-scrollbar-thumb {
     background: #404040;
-}
-
-/* Post Container shadow/border refinements */
-.post-card {
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
-}
-.dark .post-card {
-    box-shadow: none;
-    border: 1px solid #262626;
 }
